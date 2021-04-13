@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>System State extension</title>
+</head>
+<body>
+    <div class="system-info">
+        <div class="timer">
+            <h3>CPU Information</h3>
+            <select id="select-timer">
+                <option value="1">1 second</option>
+                <option value="2">2 second</option>
+                <option value="3">3 second</option>
+                <option value="5">5 second</option>
+                <option value="10">10 second</option>
+                <option value="30">30 second</option>
+                <option value="60">60 second</option>
+            </select>
+        </div>
+        <div class="cpu-info">
+            <table class="cpu-info">
+                <tr>
+                  <td>Model:</td>
+                  <td id="model"></td>
+                </tr>
+                <tr>
+                  <td>System Architect:</td>
+                  <td id="cpu-architect"></td>
+                </tr>
+                <tr>
+                  <td>No of processure:</td>
+                  <td id="NoOfProcessore"></td>
+                </tr>
+              </table>
+        </div>
+        <div class="ram-info">
+            <table class="ram-info">
+                <tr>
+                  <th>Ram info:</th>
+                </tr>
+                <tr>
+                  <td>Total Ram:</td>
+                  <td id="total ram"></td>
+                </tr>
+                <tr>
+                  <td>Used ram:</td>
+                  <td id="Used ram"></td>
+                </tr>
+                <tr>
+                  <td>Free ram</td>
+                  <td id="free ram"></td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    <script src="content.js"></script>
+</body>
+</html>

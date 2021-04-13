@@ -1,0 +1,29 @@
+ {
+  "manifest_version": 2,
+  "name": "System stats",
+  "version": "0.1",
+  "description": "Use the system.cpu API to query CPU metadata.",
+  "browser_action": {
+   // "default_icon" : "logo1.png",
+   "default_popup": "index.html",
+    "default_title": "Diagnostics Extension"
+  },
+"content_scripts" : [
+    {
+      "matches":[
+        "<all_urls>"
+      ],
+      "js":["content.js"]
+    }
+  ],
+    "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "system.cpu",
+    "system.storage",
+    "system.memory",
+    "system.display"
+  ]
+}

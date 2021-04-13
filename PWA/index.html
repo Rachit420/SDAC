@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="src/master.css">
+    <meta name="theme-color" content="#009578">
+    <link rel="apple-touch-icon" href="logo/logo1.png">
+    <title>Home</title>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="System(event, 'System_data')">System Data</button>
+  <button class="tablinks" onclick="System(event, 'System_diagonstics')">System Diagonsitcs</button>
+  <button class="tablinks" onclick="System(event, 'System_state')">System state</button>
+</div>
+
+<div id="System_data" class="tabcontent">
+  <h3>System Data</h3>
+ <div class="system-info">
+        <div class="timer">
+            <h3>CPU Information</h3>
+            <select id="select-timer">
+                <option value="1">1 second</option>
+                <option value="2">2 second</option>
+                <option value="3">3 second</option>
+                <option value="5">5 second</option>
+                <option value="10">10 second</option>
+                <option value="30">30 second</option>
+                <option value="60">60 second</option>
+            </select>
+        </div>
+        <div class="cpu-info">
+            <table class="cpu-info">
+                <tr>
+                  <td>Model:</td>
+                  <td id="model"></td>
+                </tr>
+                <tr>
+                  <td>System Architect:</td>
+                  <td id="cpu-architect"></td>
+                </tr>
+                <tr>
+                  <td>No of processure:</td>
+                  <td id="NoOfProcessore"></td>
+                </tr>
+              </table>
+        </div>
+        <div class="ram-info">
+            <table class="ram-info">
+                <tr>
+                  <th>Ram info:</th>
+                </tr>
+                <tr>
+                  <td>Total Ram:</td>
+                  <td id="total ram"></td>
+                </tr>
+                <tr>
+                  <td>Used ram:</td>
+                  <td id="Used ram"></td>
+                </tr>
+                <tr>
+                  <td>Free ram</td>
+                  <td id="free ram"></td>
+                </tr>
+              </table>
+        </div>
+    </div>
+</div>
+
+<div id="System_diagonstics" class="tabcontent">
+  <h3>System Diagonsitcs</h3>
+  <p>Nothing to show.</p> 
+</div>
+
+<div id="System_state" class="tabcontent">
+  <h3>System State</h3>
+  <p>Nothing to show.</p>
+</div>
+
+<script>
+  function System(evt, SystemState) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(SystemState).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script type="text/javascript" src="src/index.js"></script>
+<script type="text/javascript" src="content.js"></script>
+</body>
+</html> 
